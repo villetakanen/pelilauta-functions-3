@@ -48,3 +48,14 @@ functions/lib/
 * * `nvm install && nvm use` (or `fnm install && fnm use`) will automatically set the Node.js version to 20.
 * Rationale: Enforces Node.js 20 across development environments.
 
+# Firebase Project Initialization (Creates the functions directory):
+
+* Action: From the root of your cloned repository, ensure firebase-tools is available (pnpm add -g firebase-tools or corepack enable && pnpm dlx firebase-tools).
+* Action: Log in: firebase login.
+* Action: Initialize Firebase Functions: firebase init functions.
+* * Select "Use an existing project" and choose your Firebase project.
+* * Select "TypeScript".
+* * When asked "Do you want to use ESLint...", select No.
+* * When asked "Do you want to install dependencies with npm now?", select No.
+* Action: This creates the crucial functions/ directory containing tsconfig.json, package.json, and src/index.ts. This functions directory is now the heart of your project.
+* Rationale: Configures the project structure for Firebase Functions with TypeScript, skipping default tooling we'll replace.
